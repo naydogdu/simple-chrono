@@ -1,5 +1,6 @@
-import React from "react";
-import Container from "./../layout/Container";
+import React from "react"
+import Container from "./../layout/Container"
+import History from "./History"
 
 const Chrono = () => {
   return (
@@ -7,6 +8,7 @@ const Chrono = () => {
       <div className="inline-block bg-black text-white rounded-lg px-8 py-4">
         00:00:00.000
       </div>
+      <History />
     </Container>
   )
 }

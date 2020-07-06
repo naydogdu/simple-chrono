@@ -1,6 +1,6 @@
-import React from "react";
-import Container from "./Container";
-import { appDatas } from './../data/Data';
+import React from "react"
+import Container from "./Container"
+import { appDatas } from './../data/Data'
 
 const Logo = () => {
   return (
@@ -14,7 +14,7 @@ const Nav = () => {
   return (
     <nav className="app-nav ml-auto">
       <ul className="flex space-x-8">
-        { appDatas.nav.map( item => <li><a href={item.url}>{item.name}</a></li> ) }
+        { appDatas.nav.map( item => <li key={item.name.toString()}><a href={item.url}>{item.name}</a></li> ) }
       </ul>
     </nav>
   )
