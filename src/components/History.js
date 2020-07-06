@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react"
 
 const History = () => {
-  const savedTimes = useState([])
 
-  useEffect( () => {
-    console.log( savedTimes )
-  })
+  const [times, setTimes] = useState(
+    JSON.parse(localStorage.getItem("times")) ?? []
+  )
 
-  const savedItems = savedTimes[0].map( (item, index) =>
+  useEffect( () => localStorage.setItem("times", JSON.stringify( times )), [times] )
+
+  const savedItems = times.map( (item, index) =>
     <li key={index}>{item}</li>
   )
 
