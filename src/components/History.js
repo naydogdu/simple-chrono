@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react"
 
 const History = () => {
-
-  const [times, setTimes] = useState(
+  const [times] = useState(
     JSON.parse(localStorage.getItem("times")) ?? []
   )
 
