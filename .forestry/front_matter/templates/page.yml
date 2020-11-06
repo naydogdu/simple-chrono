@@ -1,4 +1,18 @@
 ---
 label: Page
 hide_body: false
-fields: []
+fields:
+- name: titre
+  type: text
+  config:
+    required: false
+  label: Titre
+- name: vignette
+  type: file
+  config:
+    maxSize: 64
+  label: Vignette
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
