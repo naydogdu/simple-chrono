@@ -1,14 +1,14 @@
 export const appDatas = {
-   title: "Chronomètre facile",
-   intro: "Chronomètre en ligne simple et facile à utiliser",
+   title: "Simple Stopwatch",
+   intro: "Simple easy-to-use stopwatch !",
    nav: [
       {
-         name: 'Accueil',
+         name: 'Home',
          url: '/'
       },
       {
          name: 'GitHub',
-         url: 'https://github.com/'
+         url: 'https://github.com/naydogdu/simple-chrono'
       },
    ]
 }
