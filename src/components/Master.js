@@ -7,34 +7,43 @@ import Stopwatch from "./Stopwatch"
 class Master extends React.Component {
     constructor(props) {
         super(props)
+        this.delay = 2
         this.state = {
-            running: true,
-            times: {
-                formatted: "00:00:00.000",
-                hours: 0,
-                minutes: 0,
-                seconds: 0,
-            }
+            running: false,
+            ms: 0
         }
     }
 
     handleClick() {
+        const running = this.state.running
         this.setState({ running: !this.state.running })
-        console.log('states', this.state)
+        !running ? this.run() : this.stop()
+    }
+
+    run() {
+        this.timer = setInterval(
+            () => this.tick(),
+            this.delay
+        )
+    }
+
+    stop() {
+        clearInterval(this.timer)
+    }
+
+    tick() {
+        const tick = this.state.ms + this.delay
+        this.setState({ ms: tick })
     }
 
     render() {
         const isRunning = this.state.running
-        let timer
-        if( isRunning ) {
-            timer = <Stopwatch running={this.state.running} times={this.state.times} />
-        } else {
-            timer = <Stopwatch running={false} times={null} />
-        }
+        const ms = this.state.ms
+
         return (
             <Container add="font-mono py-8 text-4xl font-bold text-center space-y-8">
                 <div className="tabular-nums inline-block bg-black text-white rounded-3xl px-12 py-8">
-                    {timer}
+                    <Stopwatch running={isRunning} ms={ms} />
                 </div>
                 <Go running={this.state.running} onClick={() => this.handleClick()} />
                 <History />

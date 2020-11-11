@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react"
 
 const History = () => {
+  const key = "simple-chrono-history"
   const [times] = useState(
-    JSON.parse(localStorage.getItem("times")) ?? []
+    JSON.parse(localStorage.getItem(key)) ?? []
   )
 
-  useEffect( () => localStorage.setItem("times", JSON.stringify( times )), [times] )
+  useEffect( () => localStorage.setItem(key, JSON.stringify( times )), [times] )
 
   const savedItems = times.map( (item, index) =>
     <li key={index}>{item}</li>

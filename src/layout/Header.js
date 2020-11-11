@@ -34,7 +34,7 @@ const Nav = () => {
 const Header = () => {
   return (
     <header role="banner"
-            className="bg-indigo-500 text-indigo-100 shadow-lg py-2 px-4"
+            className="bg-gradient-to-br from-indigo-500 to-indigo-600 text-indigo-100 shadow-lg py-2 px-4"
     >
       <Container>
         <div className="flex items-center">
